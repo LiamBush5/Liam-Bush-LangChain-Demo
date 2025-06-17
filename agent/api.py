@@ -65,7 +65,7 @@ async def startup_event():
         print("Agent initialized successfully!")
         print("Ready to serve music recommendations")
     except Exception as e:
-        print(f"❌ Failed to initialize agent: {e}")
+        print(f"Failed to initialize agent: {e}")
         raise e
 
 @app.get("/")
@@ -149,7 +149,7 @@ async def submit_feedback(request: FeedbackRequest):
             key="user_feedback",
             score=request.feedback,
             trace_id=request.trace_id,
-            comment=request.comment or ("👍 Thumbs up" if request.feedback == 1 else "👎 Thumbs down")
+            comment=request.comment or ("Thumbs up" if request.feedback == 1 else "Thumbs down")
         )
 
         return {
