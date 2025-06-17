@@ -13,6 +13,7 @@
 - event_search
 - edge_case
 - efficiency_test
+
 """
 
 from typing import List, Dict, Any
@@ -620,6 +621,11 @@ def get_evaluation_dataset() -> List[Dict[str, Any]]:
             }
         }
     ])
+
+    # Add splits based on difficulty
+    for case in dataset:
+        difficulty = case["metadata"]["difficulty"]
+        case["metadata"]["split"] = difficulty
 
     return dataset
 

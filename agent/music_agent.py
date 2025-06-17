@@ -25,7 +25,7 @@ class SpotifyMusicAgent:
             agent=self.agent,
             tools=self.tools,
             verbose=True,
-            handle_parsing_errors=True,
+            handle_parsing_errors="Check your output and make sure to follow this exact format:\nThought: I now know the final answer\nFinal Answer: [your response]",
             max_iterations=config.AGENT_MAX_ITERATIONS,
             max_execution_time=config.AGENT_MAX_EXECUTION_TIME,
             return_intermediate_steps=True
@@ -79,7 +79,11 @@ Don't describe what's IN the playlist - describe the FEELING
 
 Remember: You're a DJ dropping knowledge, not a music encyclopedia!
 
-STOP AFTER SUCCESS: Once you get good results from tools, provide your Final Answer immediately!
+CRITICAL: You MUST always end with exactly this format:
+Thought: I now know the final answer
+Final Answer: [your response here]
+
+NEVER just provide a response without the "Thought:" and "Final Answer:" labels!
 
 Use the following format:
 
