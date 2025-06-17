@@ -18,13 +18,7 @@
 from typing import List, Dict, Any
 
 def get_evaluation_dataset() -> List[Dict[str, Any]]:
-    """
-    Returns comprehensive evaluation dataset with good coverage across:
-    - Query complexity (easy/medium/hard)
-    - Categories (search, discovery, mood, playlist, events, edge cases)
-    - Tool usage patterns
-    - Response types
-    """
+
 
     dataset = []
 
